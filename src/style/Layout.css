@@ -1,0 +1,41 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+.main-content {
+  flex: 1;
+  width: 90vw;
+  padding-top: 60px;
+  padding-left: 0;
+  padding-right: 0;
+  animation: fadeInUp var(--transition-slow) ease-out;
+  margin-bottom: 40%;
+}
+.scroll-down-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  padding: 0 0;
+  cursor: pointer;
+  z-index: var(--z-navbar);
+  background-color: transparent;
+}
+
+.scroll-down-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding-top: 80px;
+  }
+}

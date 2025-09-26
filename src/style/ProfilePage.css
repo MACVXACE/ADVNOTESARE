@@ -1,0 +1,146 @@
+.profile-page {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  padding: var(--spacing-xl);
+  font-family: var(--font-handwriting);
+  animation: fadeInUp var(--transition-slow) ease-out;
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-lg);
+  animation: scaleIn var(--transition-normal) ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.profile-container h2 {
+  font-family: var(--font-handwriting-bold);
+  font-size: var(--font-size-heading);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-xl) 0;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slideInDown var(--transition-normal) ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.profile-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tab-navigation {
+  display: flex;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--spacing-xl);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tab-navigation::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  text-decoration: none;
+  font-family: var(--font-handwriting);
+  font-size: var(--font-size-content);
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  position: relative;
+  min-width: fit-content;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.tab-button.active {
+  border-bottom: 3px solid currentColor;
+  transform: translateY(2px);
+}
+
+.tab-button i {
+  font-size: 1.1em;
+}
+
+.tab-content {
+  min-height: 500px;
+  padding: var(--spacing-xl);
+  border: 1px solid;
+  border-radius: var(--border-radius-lg);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-page {
+    padding: var(--spacing-lg);
+    min-height: calc(100vh - 80px);
+  }
+
+  .profile-container {
+    padding: var(--spacing-xl);
+  }
+
+  .tab-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-small);
+  }
+
+  .tab-button span {
+    display: none;
+  }
+
+  .tab-content {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-page {
+    padding: var(--spacing-md);
+  }
+
+  .profile-container {
+    padding: var(--spacing-lg);
+  }
+
+  .profile-container h2 {
+    font-size: var(--font-size-subheading);
+  }
+
+  .tab-content {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: var(--spacing-md);
+  }
+
+  .tab-content {
+    padding: var(--spacing-sm);
+  }
+}
